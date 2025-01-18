@@ -9,6 +9,8 @@ async function saveUserData(user) {
         });
         if (!response.ok) {
             throw new Error("Error saving data");
+        } else {
+            console.log("Saving sussful!");
         }
     } catch (error) {
         return Promise.reject(error.message);
