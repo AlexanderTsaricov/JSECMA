@@ -15,9 +15,8 @@ async function getUserData(id) {
     if (user != null) {
         return user;
     } else {
-        console.error("User don`t find!");
         controller.abort();
-        return null;
+        return Promise.reject("User don`t find!");
     }
 }
 getUserData(565)
@@ -25,5 +24,14 @@ getUserData(565)
         console.log(user);
     })
     .catch((error) => {
+        2;
+        console.error(error);
+    });
+getUserData(1)
+    .then((user) => {
+        console.log(user);
+    })
+    .catch((error) => {
+        2;
         console.error(error);
     });
